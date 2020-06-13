@@ -22,6 +22,41 @@
 </head>
 <body>
   <div id='map'></div>
+
+  <div class='session'>
+    <h2>firespots</h2>
+    <div class='row colors'>
+    </div>
+    <div class='row labels'>
+      <div class='label'>0</div>
+      <div class='label'>1</div>
+      <div class='label'>2</div>
+      <div class='label'>3</div>
+      <div class='label'>4</div>
+      <div class='label'>5+</div>
+    </div>
+  </div>
+
+  <style>.session {
+    margin-bottom: 20px;
+  }
+  
+  .row {
+    height: 12px;
+    width: 100%;
+  }
+  
+  .colors {
+    background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
+    margin-bottom: 5px;
+  }
+  
+  .label {
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+  }
+</style>
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiaXJhbzQxMyIsImEiOiJja2JkeHFoMnYwZ2ZhMzJsaGh1cHEza3R4In0.h0UhquxE2HPpxW46ML2Fpw';
     var map = new mapboxgl.Map({
@@ -130,7 +165,7 @@ map.addLayer({
     }
   }
 }, 'waterway-label');
-map.on('click', 'trees-point', function(e) {
+map.on('click', 'brazil-point', function(e) {
   new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
     .setHTML('<b>DBH:</b> ' + e.features[0].properties.dbh)
