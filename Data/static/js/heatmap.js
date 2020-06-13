@@ -1,5 +1,5 @@
 var myMap = L.map("map", {
-    center: [14.2350S, 51.9253W],
+    center: [-14.2350, -51.9253],
     zoom: 13
   });
   
@@ -19,7 +19,7 @@ var myMap = L.map("map", {
     accessToken: API_KEY
   }).addTo(myMap);
   
-  var data = "Data/brazil_fires.csv";
+  var data = "Data/brazil_fires.json";
   
   d3.json(data, function(response) {
   

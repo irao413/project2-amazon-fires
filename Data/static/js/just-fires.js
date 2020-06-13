@@ -1,5 +1,5 @@
 var myMap = L.map("map", {
-  center: [14.2350S, 51.9253W],
+  center: [-14.2350, -51.9253],
   zoom: 13
 });
 
@@ -18,7 +18,7 @@ var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{
     accessToken: API_KEY
   }).addTo(myMap);
 
-var newtry = "Data/brazil_fires.csv";
+var newtry = "Data/brazil_fires.json";
 
 d3.json(newtry, function(response) {
 
