@@ -19,6 +19,7 @@
 
 # activity about Flask, jsonify:
 # https://ucsd.bootcampcontent.com/UCSD-Coding-Bootcamp/ucsd-sd-data-pt-01-2020-u-c/blob/master/01-Lesson-Plans/10-Advanced-Data-Storage-and-Retrieval/3/Activities/08-Ins_Variable_Rule/Solved/app.py
+
 from flask import Flask, render_template, jsonify
 
 from sqlalchemy import create_engine
@@ -37,20 +38,8 @@ def get_chart_data():
     return render_template('index.html', chart_data=db_data)
 
 def get_data_from_db():
-    
-
-# @app.route("/")
-# def index():
-#    mars = mongo.db.mars.find_one()
-#    return render_template("index.html", mars=mars)
-
-
-#@app.route("/scrape")
-#def scrape():
-#    mars = mongo.db.mars
-#    mars_data = scrape_mars.scrape_all()
-#    mars.replace_one({}, mars_data, upsert=True)
-#    return "Scraping Successful!"
+    chart_data = pd.read_sql('select * from brazil_fires', connection)
+    return chart_data
 
 
 if __name__ == "__main__":
