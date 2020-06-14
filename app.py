@@ -1,16 +1,3 @@
-#HTML and JavaScript: using the database data returned from Flask:
-#yourJavaScriptFunction() {
-#  var chartData = {{ chart_data|tojson }}; 
-
-# Postgres SQL db = fire_project_db
-# Postgres tables = brazil_fires, brazil_states_deforestation
-# sqlite table = brazil_fires
-# sqlite database = fire.db
-# mongo database = brazil_db
-# mongo collection = cattle_milk
-
-# http://127.0.0.1:5000/get_db_data
-
 from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
 

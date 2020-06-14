@@ -1,22 +1,14 @@
-// Step 1: Set up our chart
-//= ================================
+// Chart Params
 var svgWidth = 960;
 var svgHeight = 500;
 
-var margin = {
-  top: 20,
-  right: 40,
-  bottom: 60,
-  left: 50
-};
+var margin = { top: 20, right: 100, bottom: 60, left: 100
+ };
 
 var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
-// Step 2: Create an SVG wrapper,
-// append an SVG group that will hold our chart,
-// and shift the latter by left and top margins.
-// =================================
+// Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
 var svg = d3
   .select("body")
   .append("svg")
@@ -26,15 +18,13 @@ var svg = d3
 var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// Step 3:
-// Import data from the JSON response from Flask
-// =================================
-var url ="../static/data/cattle_data.json";
+// Import data from JSON file
+var data_path ="../static/data/cattle_data.json";
 
-d3.json(url).then(function(cattleData) {
-  // Step 4: Parse the data
-  // Format the data and convert to numerical and year values
-  // =================================
+d3.json(data_path).then(function(cattleData) {
+  console.log(cattleData);
+  console.log([cattleData]);
+
   // Create a function to parse year and time
   var parseTime = d3.timeParse("%Y");
 
@@ -45,78 +35,74 @@ d3.json(url).then(function(cattleData) {
     data.cow_milk = +data.cow_milk;
   });
 
-  // Step 5: Create the scales for the chart
-  // =================================
+  // Create scaling functions
   var xTimeScale = d3.scaleTime()
     .domain(d3.extent(cattleData, d => d.year))
     .range([0, width]);
 
-  var yLinearScale = d3.scaleLinear().range([height, 0]);
+  var yLinearScale1 = d3.scaleLinear()
+    .domain([0, d3.max(cattleData, d => d.cattle)])
+    .range([height, 0]);
 
-  // Step 6: Set up the y-axis domain
-  // ==============================================
-  // @NEW! determine the max y value
-  // find the max of the cattle data
-  var cattleMax = d3.max(cattleData, d => d.cattle);
+  var yLinearScale2 = d3.scaleLinear()
+    .domain([0, d3.max(cattleData, d => d.cow_milk)])
+    .range([height, 0]);
 
-  // find the max of the cow_milk data
-  var cow_milkMax = d3.max(cattleData, d => d.cow_milk);
+  // Create axis functions
+  var bottomAxis = d3.axisBottom(xTimeScale)
+    .tickFormat(d3.timeFormat("%Y"));
+  var leftAxis = d3.axisLeft(yLinearScale1);
+  var rightAxis = d3.axisRight(yLinearScale2);
 
-  var yMax;
-  if (cattleMax > cow_milkMax) {
-    yMax = cattleMax;
-  }
-  else {
-    yMax = cow_milkMax;
-  }
-
-  // var yMax = cattleMax > cow_milkMax ? cattleMax : cow_milkMax;
-
-  // Use the yMax value to set the yLinearScale domain
-  yLinearScale.domain([0, yMax]);
-
-
-  // Step 7: Create the axes
-  // =================================
-  var bottomAxis = d3.axisBottom(xTimeScale).tickFormat(d3.timeFormat("%Y"));
-  var leftAxis = d3.axisLeft(yLinearScale);
-
-  // Step 8: Append the axes to the chartGroup
-  // ==============================================
   // Add x-axis
   chartGroup.append("g")
     .attr("transform", `translate(0, ${height})`)
     .call(bottomAxis);
 
-  // Add y-axis
-  chartGroup.append("g").call(leftAxis);
+  // Add y1-axis to the left side of the display
+  chartGroup.append("g")
+    // Define the color of the axis text
+    .classed("green", true)
+    .call(leftAxis);
 
-  // Step 9: Set up two line generators and append two SVG paths
-  // ==============================================
+  // Add y2-axis to the right side of the display
+  chartGroup.append("g")
+    // Define the color of the axis text
+    .classed("blue", true)
+    .attr("transform", `translate(${width}, 0)`)
+    .call(rightAxis);
 
-  // Line generator for cattle data
+  // Line generators for each line
   var line1 = d3.line()
     .x(d => xTimeScale(d.year))
-    .y(d => yLinearScale(d.cattle));
+    .y(d => yLinearScale1(d.cattle));
 
-  // Line generator for cow_milk data
   var line2 = d3.line()
     .x(d => xTimeScale(d.year))
-    .y(d => yLinearScale(d.cow_milk));
+    .y(d => yLinearScale2(d.cow_milk));
 
   // Append a path for line1
-  chartGroup
-    .append("path")
-    .attr("d", line1(cattleData))
+  chartGroup.append("path")
+    .data([cattleData])
+    .attr("d", line1)
     .classed("line green", true);
 
   // Append a path for line2
-  chartGroup
+  chartGroup.append("path")
     .data([cattleData])
-    .append("path")
     .attr("d", line2)
-    .classed("line orange", true);
+    .classed("line blue", true);
 
+  // Append axes titles
+  chartGroup.append("text")
+  .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`)
+    .classed("dow-text text", true)
+    .text("Number of Cattle (Heads)");
+
+  chartGroup.append("text")
+  .attr("transform", `translate(${width / 2}, ${height + margin.top + 37})`)
+    .classed("smurf-text text", true)
+    .text("Cow's Milk Production (Thousand Liters)");
 }).catch(function(error) {
   console.log(error);
 });
