@@ -29,7 +29,7 @@ var chartGroup = svg.append("g")
 // Step 3:
 // Import data from the JSON response from Flask
 // =================================
-var url ="http://127.0.0.1:5000/get_db_data";
+var url ="../static/data/cattle_data.json";
 
 d3.json(url).then(function(cattleData) {
   // Step 4: Parse the data
@@ -78,7 +78,7 @@ d3.json(url).then(function(cattleData) {
 
   // Step 7: Create the axes
   // =================================
-  var bottomAxis = d3.axisBottom(xTimeScale).tickFormat(d3.timeFormat("%d-%b"));
+  var bottomAxis = d3.axisBottom(xTimeScale).tickFormat(d3.timeFormat("%Y"));
   var leftAxis = d3.axisLeft(yLinearScale);
 
   // Step 8: Append the axes to the chartGroup
