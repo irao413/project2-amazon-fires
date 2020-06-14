@@ -1,57 +1,99 @@
-# from Ian:
-# As you work on project #2 here is some helper code to get you started on connecting your database to your Flask API and html page:
-#Flask: querying your database and passing database data to your html page:
-#@app.route('/')
-#def get_chart_data():
-    # get_data_from_db is a custom function you write to query your database
-#    db_data = get_data_from_db()
-                                
-#    return render_template('index.html', chart_data=db_data)
-
 #HTML and JavaScript: using the database data returned from Flask:
 #yourJavaScriptFunction() {
 #  var chartData = {{ chart_data|tojson }}; 
 
 # Postgres SQL db = fire_project_db
+# Postgres tables = brazil_fires, brazil_states_deforestation
+# sqlite table = brazil_fires
+# sqlite database = fire.db
 
-# Online info about Python With PostgresSql, SQLAlchemy And Flask:
-# https://www.c-sharpcorner.com/article/python-with-postgressql-sqlalchemy-and-flask2/
+# https://ucsd.bootcampcontent.com/UCSD-Coding-Bootcamp/ucsd-sd-data-pt-01-2020-u-c/blob/master/01-Lesson-Plans/10-Advanced-Data-Storage-and-Retrieval/3/Activities/10-Ins_Flask_with_ORM/Solved/app.py
 
-# activity about Flask, jsonify:
-# https://ucsd.bootcampcontent.com/UCSD-Coding-Bootcamp/ucsd-sd-data-pt-01-2020-u-c/blob/master/01-Lesson-Plans/10-Advanced-Data-Storage-and-Retrieval/3/Activities/08-Ins_Variable_Rule/Solved/app.py
-from flask import Flask, render_template, jsonify
+import numpy as np
 
-from sqlalchemy import create_engine
-engine = create_engine(f'postgresql://{PGUSER}:{PGPASSWORD}@localhost:5432/brazil_fires')
-connection = engine.connect()
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
+
+from flask import Flask, jsonify
 
 
+#################################################
+# Database Setup
+#################################################
+engine = create_engine("sqlite:///fire.db")
+
+# reflect an existing database into a new model
+Base = automap_base()
+# reflect the tables
+Base.prepare(engine, reflect=True)
+
+# Save reference to the table
+Fire = Base.classes.brazil_fires
+
+#################################################
+# Flask Setup
+#################################################
 app = Flask(__name__)
 
 
-@app.route('/')
-def get_chart_data():
-    # get_data_from_db is a custom function you write to query your database
-    db_data = get_data_from_db()
-                                
-    return render_template('index.html', chart_data=db_data)
+#################################################
+# Flask Routes
+#################################################
 
-def get_data_from_db():
-    
-
-# @app.route("/")
-# def index():
-#    mars = mongo.db.mars.find_one()
-#    return render_template("index.html", mars=mars)
+@app.route("/")
+def welcome():
+    """List all available api routes."""
+    return (
+        f"Available Routes:<br/>"
+        f"/api/v1.0/names<br/>"
+        f"/api/v1.0/passengers"
+    )
 
 
-#@app.route("/scrape")
-#def scrape():
-#    mars = mongo.db.mars
-#    mars_data = scrape_mars.scrape_all()
-#    mars.replace_one({}, mars_data, upsert=True)
-#    return "Scraping Successful!"
+@app.route("/api/v1.0/names")
+def names():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+
+    """Return a list of all passenger names"""
+    # Query all passengers
+    results = session.query(Fire.state).all()
+
+    session.close()
+
+    # Convert list of tuples into normal list
+    all_names = list(np.ravel(results))
+
+    return jsonify(all_names)
 
 
-if __name__ == "__main__":
-    app.run()
+@app.route("/api/v1.0/passengers")
+def passengers():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+
+    """Return a list of passenger data including the name, age, and sex of each passenger"""
+    # Query all passengers
+    results = session.query(Fire.year, Fire.month, Fire.state, Fire.latitude, Fire.longitude, Fire.firespots).all()
+
+    session.close()
+
+    # Create a dictionary from the row data and append to a list of all_passengers
+    all_fires = []
+    for year, month, state, latitude, longitude, firespots in results:
+        fire_dict = {}
+        fire_dict["year"] = year
+        fire_dict["month"] = month
+        fire_dict["state"] = state
+        fire_dict["latitude"] = latitude
+        fire_dict["longitude"] = longitude
+        fire_dict["firespots"] = firespots
+        all_fires.append(fire_dict)
+
+    return jsonify(all_fires)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
