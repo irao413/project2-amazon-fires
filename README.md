@@ -14,6 +14,9 @@ We analyzed fires and deforestation in Brazil, using a Python Flask–powered RE
 Project Proposal
 URL: https://docs.google.com/presentation/d/16SSofyuzxMUWQbZseCeCK2TuT39yF9r5JsHjvHAqZDM/edit?usp=sharing
 
+Project Presentation
+Presentation slides in PDF format are included in this repo.
+
 ## Datasets
 * Brazil Fires Data (2100+ records)
   * Org
