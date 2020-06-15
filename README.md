@@ -9,7 +9,7 @@
 
 #### Project Description
 
-We analyzed fires and deforestation in Brazil, using a Python Flask–powered RESTful API, HTML/CSS, JavaScript, MongoDB, Chartist JS Libary (not covered in class), and deployed to Github Pages. 
+We analyzed fires and deforestation in Brazil, using a Python Flask–powered RESTful API, HTML/CSS, JavaScript, and MongoDB. Our project track is a custom “creative” D3.js project (i.e., a nonstandard graph or chart), and we chose Chartist to fulfill the requirement of using a JS Libary not covered in class.
 
 Project Proposal
 
