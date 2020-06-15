@@ -40,5 +40,5 @@ SCREENSHOT
 * Multiline/multiaxis line graph
 ![](static/images/cattle_graph.png)
 
-#### Create Github Pages webpage displaying all visualizations
+#### GitHub Pages Website
   * https://ivytiongco.github.io/project2-amazon-fires/
