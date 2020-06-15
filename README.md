@@ -27,15 +27,18 @@ URL: https://docs.google.com/presentation/d/16SSofyuzxMUWQbZseCeCK2TuT39yF9r5JsH
 
 ## Visualizations
 * Heatmap
-  * SCREENSHOT  
+SCREENSHOT  
+
 * State map
-  * SCREENSHOT  
+SCREENSHOT  
+
 * Bar/line graph
   * Using Chartist, a JS library not covered in class
   * Includes user-driven interaction - tooltip???
-  * SCREENSHOT  
-* Multiline/multiaxis line graph
-  * ![](static/images/cattle_graph.png)
+SCREENSHOT  
 
-* Create Github Pages webpage displaying all visualizations
+* Multiline/multiaxis line graph
+![](static/images/cattle_graph.png)
+
+#### Create Github Pages webpage displaying all visualizations
   * https://ivytiongco.github.io/project2-amazon-fires/
