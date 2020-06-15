@@ -25,7 +25,7 @@ URL: https://docs.google.com/presentation/d/16SSofyuzxMUWQbZseCeCK2TuT39yF9r5JsH
   * IBGE - Brazilian Institute of Geography and Statistics
   * https://sidra.ibge.gov.br/acervo#/S/CA/A/40/T/Q
 
-## Visualizations "format: exclamation[](static/images/cattle_graph.png)"
+## Visualizations
 * Heatmap
   * SCREENSHOT  
 * State map
