@@ -23,3 +23,9 @@
 .dow-text {
   fill: green;
 }
+
+.image-vis {
+  width: 120px;
+  height: 120x;
+  margin: 10px;
+}
