@@ -97,12 +97,12 @@ d3.json(data_path).then(function(cattleData) {
   chartGroup.append("text")
   .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`)
     .classed("dow-text text", true)
-    .text("Number of Cattle (Heads)");
+    .text("Number of Cattle in Brazil by Year (Heads)");
 
   chartGroup.append("text")
   .attr("transform", `translate(${width / 2}, ${height + margin.top + 37})`)
     .classed("smurf-text text", true)
-    .text("Cow's Milk Production (Thousand Liters)");
+    .text("Cow's Milk Production in Brazil by Year (Thousand Liters)");
 }).catch(function(error) {
   console.log(error);
 });
