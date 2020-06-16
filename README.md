@@ -9,7 +9,7 @@
 
 #### Project Description
 
-We analyzed fires and deforestation in Brazil, using a Python Flask–powered RESTful API, HTML/CSS, JavaScript, and MongoDB. Our project track is a custom “creative” D3.js project (i.e., a nonstandard graph or chart), including user-driven interaction (click to change data displayed) and we chose Chartist to fulfill the requirements of using a JS Libary not covered in class.
+We analyzed fires and deforestation in Brazil, using a Python Flask–powered RESTful API, HTML/CSS, JavaScript, Leaflet, Mapbox, and MongoDB. Our project track is a custom “creative” D3.js project (i.e., a nonstandard graph or chart), including user-driven interaction (click to change data displayed) and we chose Chartist to fulfill the requirements of using a JS Libary not covered in class.
 
 #### GitHub Pages Website
   * https://ivytiongco.github.io/project2-amazon-fires/
@@ -34,13 +34,11 @@ Presentation slides in PDF format are included in this repo.
   * https://sidra.ibge.gov.br/acervo#/S/CA/A/40/T/Q
 
 ## Visualizations
-* Bar/line graph
+* Bar/line chart and line chart
   * Using Chartist, a JS library not covered in class
   * Includes user-driven interaction (click to change data displayed)
   
 ![](static/images/chartist_line_bar.png)
-
-* Line chart
 
 ![](static/images/gdp.png)
 
