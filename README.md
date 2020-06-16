@@ -32,14 +32,18 @@ Presentation slides in PDF format are included in this repo.
 
 ## Visualizations
 * Heatmap
-SCREENSHOT  
+![](static/images/heatmap_zoomed_out.png)  
+
+![](static/images/heatmap_zoomed_in.png) 
 
 * State map
+
 SCREENSHOT  
 
 * Bar/line graph
   * Using Chartist, a JS library not covered in class
   * Includes user-driven interaction - tooltip???
+  
 SCREENSHOT  
 
 * Multiline/multiaxis line graph
