@@ -41,7 +41,7 @@ var chartData = {
             }, {
                 type: 'line',
                 label: 'Amazonas Fires',
-                data: [],
+                data: [1232,775,788,610,604,405,595,502,523,583,500,712,1129,1001,1045,1421],
                 borderWidth: 1,
                 borderColor: 'red',
 				fill: false,
