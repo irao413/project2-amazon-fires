@@ -40,7 +40,7 @@ Presentation slides in PDF format are included in this repo.
   
 ![](static/images/chartist_line_bar.png)
 
-* NAME OF GDP CHART????????????
+* Line chart
 
 ![](static/images/gdp.png)
 
