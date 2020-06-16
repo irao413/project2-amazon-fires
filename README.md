@@ -48,7 +48,13 @@ SCREENSHOT
   * Using Chartist, a JS library not covered in class
   * Includes user-driven interaction - tooltip???
   
-SCREENSHOT  
+SCREENSHOT
+
+* Python Flask–powered RESTful API & MongoDB
+
+![](static/images/flask_home.png) 
+
+![](static/images/flask_json_data.png) 
 
 * Multiline/multiaxis line graph
 
