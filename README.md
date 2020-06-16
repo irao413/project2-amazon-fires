@@ -32,6 +32,7 @@ Presentation slides in PDF format are included in this repo.
 
 ## Visualizations
 * Heatmap
+
 ![](static/images/heatmap_zoomed_out.png)  
 
 ![](static/images/heatmap_zoomed_in.png) 
@@ -47,6 +48,7 @@ SCREENSHOT
 SCREENSHOT  
 
 * Multiline/multiaxis line graph
+
 ![](static/images/cattle_graph.png)
 
 #### GitHub Pages Website
