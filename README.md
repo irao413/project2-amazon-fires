@@ -35,12 +35,15 @@ Presentation slides in PDF format are included in this repo.
 
 ## Visualizations
 * Bar/line chart of of Brazil fire and deforestation
+  * Using Chartist, a JS library not covered in class
+  * Includes user-driven interaction (click to change data displayed)
+
+![](static/images/chartist_line_bar.png)
+
 * Line chart of Brazil fires, deforestation, CO2 emissions, GDP, and beef exports
   * Using Chartist, a JS library not covered in class
   * Includes user-driven interaction (click to change data displayed)
   
-![](static/images/chartist_line_bar.png)
-
 ![](static/images/gdp.png)
 
 * Map of deforestation in Brazil states
