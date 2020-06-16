@@ -19,9 +19,11 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Import data from JSON file
-var data_path ="../static/data/cattle_data.json";
+//var data_path ="../static/data/cattle_data.json";
+var chartData = {{ chart_data|tojson }};
 
-d3.json(data_path).then(function(cattleData) {
+d3.json(chartData).then(function(cattleData) {
+//d3.json(data_path).then(function(cattleData) {
   console.log(cattleData);
   console.log([cattleData]);
 
