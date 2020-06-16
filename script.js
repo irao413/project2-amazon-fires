@@ -1,3 +1,11 @@
+Chart.plugins.register({
+  beforeDraw: function(chartInstance) {
+    var ctx = chartInstance.chart.ctx;
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
+  }
+});
+
 new Chart(document.getElementById("mixed-chart"), 
 {
     type: 'bar',
@@ -92,7 +100,7 @@ new Chart(document.getElementById("mixed-chart"),
           label: "Rondonia Deforestation",
           type: "bar",
           backgroundColor: "green",
-          data: [],
+          data: [3858,3244,2049,1611,1136,482,435,865,773,932,684,1030,1376,1243,1316,1245],
           yAxisID: 'right-y-axis'
         }, {
           label: "Roraima Fires",
@@ -105,7 +113,7 @@ new Chart(document.getElementById("mixed-chart"),
           label: "Roraima Deforestation",
           type: "bar",
           backgroundColor: "green",
-          data: [],
+          data: [311,133,231,309,574,121,256,141,124,170,219,156,202,132,195,617],
           yAxisID: 'right-y-axis'
         }, {
           label: "Tocantins Fires",
@@ -118,21 +126,31 @@ new Chart(document.getElementById("mixed-chart"),
           label: "Tocantins Deforestation",
           type: "bar",
           backgroundColor: "green",
-          data: [],
+          data: [158,271,124,63,107,61,49,40,52,74,50,57,58,31,25,21],
           yAxisID: 'right-y-axis'
         }
       ]
     },
     options: {
+      scaleFontColor: 'white',
+      responsive: true,
+      tooltips: {
+        mode: 'single',
+      },
       title: {
         display: true,
-        text: 'Fires and Deforestation in AC & AM(test)'
+        fontSize : 30,
+        fontColor: "white",
+        text: 'Fires and Deforestation in Brazilian Amazon'
       },
       legend: { display: true },
       scales: {
         yAxes: [{
           scaleLabel: {
             display:true,
+            fontColor: "white",
+            fontSize : 20,
+            fontColor: "white",
             labelString: "Fire Count (sum)"
           } , 
           id: 'left-y-axis',
@@ -142,6 +160,8 @@ new Chart(document.getElementById("mixed-chart"),
         }, {
           scaleLabel: {
             display:true,
+            fontSize : 20,
+            fontColor: "white",
             labelString: "Deforestation (km^2)"
           },
           id: 'right-y-axis',
