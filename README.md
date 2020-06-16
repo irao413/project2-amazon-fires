@@ -42,7 +42,7 @@ Presentation slides in PDF format are included in this repo.
 
 ![](static/images/gdp.png)
 
-* Map of Brazil states
+* Map of deforestation in Brazil states
   * Includes user-driven interaction (click to change data displayed)
 
 ![](static/images/Brazil2004.png)
