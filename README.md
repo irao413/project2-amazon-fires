@@ -19,6 +19,9 @@ Project Presentation
 
 Presentation slides in PDF format are included in this repo.
 
+#### GitHub Pages Website
+  * https://ivytiongco.github.io/project2-amazon-fires/
+
 ## Datasets
 * Brazil Fires Data (2100+ records)
   * Org
@@ -50,6 +53,3 @@ SCREENSHOT
 * Multiline/multiaxis line graph
 
 ![](static/images/cattle_graph.png)
-
-#### GitHub Pages Website
-  * https://ivytiongco.github.io/project2-amazon-fires/
