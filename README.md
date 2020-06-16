@@ -56,6 +56,6 @@ SCREENSHOT
 
 ![](static/images/flask_json_data.png) 
 
-* Multiline/multiaxis line graph
+* Multiline/multiaxis line graph using JSON data from Flask
 
 ![](static/images/cattle_graph.png)
