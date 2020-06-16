@@ -9,7 +9,7 @@
 
 #### Project Description
 
-We analyzed fires and deforestation in Brazil, using a Python Flask–powered RESTful API, HTML/CSS, JavaScript, and MongoDB. Our project track is a custom “creative” D3.js project (i.e., a nonstandard graph or chart), and we chose Chartist to fulfill the requirements of using a JS Libary not covered in class and including user-driven interaction (click to change data displayed).
+We analyzed fires and deforestation in Brazil, using a Python Flask–powered RESTful API, HTML/CSS, JavaScript, and MongoDB. Our project track is a custom “creative” D3.js project (i.e., a nonstandard graph or chart), including user-driven interaction (click to change data displayed) and we chose Chartist to fulfill the requirements of using a JS Libary not covered in class.
 
 #### GitHub Pages Website
   * https://ivytiongco.github.io/project2-amazon-fires/
@@ -34,28 +34,30 @@ Presentation slides in PDF format are included in this repo.
   * https://sidra.ibge.gov.br/acervo#/S/CA/A/40/T/Q
 
 ## Visualizations
+* Bar/line graph
+  * Using Chartist, a JS library not covered in class
+  * Includes user-driven interaction (click to change data displayed)
+  
+![](static/images/chartist_line_bar.png)
+
+* NAME OF GDP CHART????????????
+
+![](static/images/gdp.png)
+
+* Map of Brazil states
+  * Includes user-driven interaction (click to change data displayed)
+
+![](static/images/Brazil2004.png)
+
+![](static/images/Brazil2019.png)
+
 * Heatmap
 
 ![](static/images/heatmap_zoomed_out.png)  
 
 ![](static/images/heatmap_zoomed_in.png) 
 
-* State map
+* Multiline/multiaxis line graph
+  * Using JSON data from Python Flask–powered RESTful API & MongoDB
 
-SCREENSHOT  
-
-* Bar/line graph
-  * Using Chartist, a JS library not covered in class
-  * Includes user-driven interaction - tooltip???
-  
-SCREENSHOT
-
-* Python Flask–powered RESTful API & MongoDB
-
-![](static/images/flask_home.png) 
-
-![](static/images/flask_json_data.png) 
-
-* Multiline/multiaxis line graph using JSON data from Flask
-
-![](static/images/cattle_graph.png)
+![](static/images/flask_cattle_graph.png)
