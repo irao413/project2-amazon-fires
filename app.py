@@ -6,17 +6,9 @@ app = Flask(__name__)
 # Use PyMongo to establish Mongo connection
 mongo = PyMongo(app, uri="mongodb://localhost:27017/brazil_db")
 
-# Route to render index.html template using data from Mongo
+# Route to render cattle_graph.html template using data from Mongo
 @app.route("/")
 
-def welcome():
-    return(
-        f"Welcome to my home page!<br/>"
-        f"Available Routes:<br/>"
-        f"/get_db_data<br/>"
-    )
-
-@app.route('/get_db_data')
 def get_data():
     # get_data_from_db is a custom function you write to query your database
     db = mongo.db.cattle_milk
@@ -27,7 +19,7 @@ def get_data():
         db_data.append(item)
 
     # return jsonify(db_data)
-    return jsonify(db_data)
+    return render_template('cattle_graph.html', chart_data=db_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
