@@ -1,5 +1,5 @@
 # Project 2 Report
-## Amazon/Brazil??? Fires and Deforestation
+## Brazil Fires and Deforestation
 
 #### Authors
 * Alexander Burch
