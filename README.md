@@ -24,11 +24,11 @@ Presentation slides in PDF format are included in this repo.
 
 ## Datasets
 * Brazil Fires Data (2100+ records)
-  * Org
-  * Link  
+  * Kaggle - Forest Fires in Brazil
+  * https://www.kaggle.com/gustavomodelli/forest-fires-in-brazil  
 * Brazil Deforestation Data
-  * Org
-  * Link  
+  * Kaggle - Brazilian Amazon Rainforest Degradation 1999-2019
+  * https://www.kaggle.com/mbogernetto/brazilian-amazon-rainforest-degradation  
 * Cattle Data
   * IBGE - Brazilian Institute of Geography and Statistics
   * https://sidra.ibge.gov.br/acervo#/S/CA/A/40/T/Q
