@@ -40,32 +40,32 @@ Presentation slides in PDF format are included in this repo.
   * https://sidra.ibge.gov.br/acervo#/S/CA/A/40/T/Q
 
 ## Visualizations
-* Bar/line chart of of Brazil fire and deforestation
+* Bar/line chart of of Brazil fire and deforestation (index_TS.html)
   * Using Chart.js, a JS library not covered in class
   * Includes user-driven interaction (click to change data displayed)
 
 ![](static/images/chartist_line_bar.png)
 
-* Line chart of Brazil fires, deforestation, CO2 emissions, GDP, and beef exports
+* Line chart of Brazil fires, deforestation, CO2 emissions, GDP, and beef exports (index3_TS.html)
   * Using Chart.js, a JS library not covered in class
   * Includes user-driven interaction (click to change data displayed)
   
 ![](static/images/gdp.png)
 
-* Map of deforestation in Brazil states
+* Map of deforestation in Brazil states (alex/index.html)
   * Includes user-driven interaction (click to change data displayed)
 
 ![](static/images/Brazil2004.png)
 
 ![](static/images/Brazil2019.png)
 
-* Heatmap of Brazil fires
+* Heatmap of Brazil fires (testing1.html)
 
 ![](static/images/heatmap_zoomed_out.png)  
 
 ![](static/images/heatmap_zoomed_in.png) 
 
-* Multiline/multiaxis line graph of Brazil cattle data
+* Multiline/multiaxis line graph of Brazil cattle data (app.py)
   * Using JSON data from Python Flask–powered RESTful API & MongoDB
 
 ![](static/images/flask_cattle_graph.png)
