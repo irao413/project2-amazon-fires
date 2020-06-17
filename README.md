@@ -9,7 +9,7 @@
 
 #### Project Description
 
-We analyzed fires and deforestation in Brazil, using a Python Flask–powered RESTful API, HTML/CSS, JavaScript, Leaflet, Mapbox, and MongoDB. Our project track is a custom “creative” D3.js project (i.e., a nonstandard graph or chart), including user-driven interaction (click to change data displayed) and we chose Chart.js to fulfill the requirements of using a JS Libary not covered in class.
+We analyzed fires and deforestation in Brazil, using a Python Flask–powered RESTful API, HTML/CSS, JavaScript, Leaflet, Mapbox, and MongoDB. Our project track is a custom “creative” D3.js project (i.e., a nonstandard graph or chart), and we chose Chart.js to fulfill the requirements of using a JS Libary not covered in class and including user-driven interaction (click to change data displayed).
 
 #### GitHub Pages Website
   * https://ivytiongco.github.io/project2-amazon-fires/
