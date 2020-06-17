@@ -28,7 +28,13 @@ Presentation slides in PDF format are included in this repo.
   * https://www.kaggle.com/gustavomodelli/forest-fires-in-brazil  
 * Brazil Deforestation Data
   * Kaggle - Brazilian Amazon Rainforest Degradation 1999-2019
-  * https://www.kaggle.com/mbogernetto/brazilian-amazon-rainforest-degradation  
+  * https://www.kaggle.com/mbogernetto/brazilian-amazon-rainforest-degradation
+* Beef Exports (Brazil) 
+  * MDIC, SECEX, Abiec
+  * https://www.globalmeatnews.com/Article/2019/01/22/Largest-ever-beef-exports-by-volume-for-Brazil
+* GDP and CO2 Emissions (Brazil) 
+  * World Bank
+  * https://data.worldbank.org/country/brazil
 * Cattle Data
   * IBGE - Brazilian Institute of Geography and Statistics
   * https://sidra.ibge.gov.br/acervo#/S/CA/A/40/T/Q
